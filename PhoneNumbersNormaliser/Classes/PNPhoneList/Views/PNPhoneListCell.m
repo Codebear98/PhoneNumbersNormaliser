@@ -17,9 +17,9 @@ static CGFloat const kPNPhoneListCell_TitleLabelWidth = 85.0f;
 #define PNPhoneListCell_SmallFont [UIFont systemFontOfSize:10.0]
 #define PNPhoneListCell_LargeFont [UIFont systemFontOfSize:16.0]
 #define PNPhoneListCell_NormalFont [UIFont systemFontOfSize:13.0]
-#define PNPhoneListCell_TitleColor UIColorFromHex(0x415677)
-#define PNPhoneListCell_TextColor UIColorFromHex(0x7DAD74)
-#define PNPhoneListCell_OrgColor UIColorFromHex(0x738CA1)
+#define PNPhoneListCell_TitleColor UIColorFromHex(0x3A5D61)
+#define PNPhoneListCell_TextColor UIColorFromHex(0x3E7D00)
+#define PNPhoneListCell_OrgColor UIColorFromHex(0x53868B)
 
 @interface PNPhoneListCell()
 
