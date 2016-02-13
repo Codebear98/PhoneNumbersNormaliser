@@ -29,6 +29,7 @@
 {
 	// setup all subviews
 	self.backgroundColor = [UIColor whiteColor];
+	self.allowsSelection = NO;
 }
 
 - (void)setupConstraints

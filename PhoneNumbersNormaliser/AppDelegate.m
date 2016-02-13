@@ -22,25 +22,25 @@
 	// Override point for customization after application launch.
 
 	// dummy data
-	[[PNPhoneBook sharedInstance] addPhoneNumber:@"+852 56232322"];
-	[[PNPhoneBook sharedInstance] addPhoneNumber:@"+852 92136233"];
-	[[PNPhoneBook sharedInstance] addPhoneNumber:@"+852 62136233"];
-	[[PNPhoneBook sharedInstance] addPhoneNumber:@"+852 22136233"];
-	[[PNPhoneBook sharedInstance] addPhoneNumber:@"+852 12136233"];
-	[[PNPhoneBook sharedInstance] addPhoneNumber:@"56232322"];
-	[[PNPhoneBook sharedInstance] addPhoneNumber:@"22136230"];
-	[[PNPhoneBook sharedInstance] addPhoneNumber:@"92136233"];
-	[[PNPhoneBook sharedInstance] addPhoneNumber:@"9213623"];
-	[[PNPhoneBook sharedInstance] addPhoneNumber:@"+442071234567"];
-	[[PNPhoneBook sharedInstance] addPhoneNumber:@"+44 2  0 71234 56 7"];
-	[[PNPhoneBook sharedInstance] addPhoneNumber:@"+44 10 7123 4567"];
-	[[PNPhoneBook sharedInstance] addPhoneNumber:@"44 20 7123 4567"];
-	[[PNPhoneBook sharedInstance] addPhoneNumber:@"+44 7700 900344"];
-	[[PNPhoneBook sharedInstance] addPhoneNumber:@"+44 3069 990840"];
-	[[PNPhoneBook sharedInstance] addPhoneNumber:@"+1-202-555-0161"];
-	[[PNPhoneBook sharedInstance] addPhoneNumber:@"1-202555-0-161"];
-	[[PNPhoneBook sharedInstance] addPhoneNumber:@"1-a2b0c2d5e550161"];
-	[[PNPhoneBook sharedInstance] addPhoneNumber:@"202555-0-161"];
+	[[PNPhoneBook sharedInstance] addPhoneNumber:@"+852 56232322"];		  // random mobile
+	[[PNPhoneBook sharedInstance] addPhoneNumber:@"+852 92136233"];		  // random mobile
+	[[PNPhoneBook sharedInstance] addPhoneNumber:@"+852 62136233"];		  // random mobile
+	[[PNPhoneBook sharedInstance] addPhoneNumber:@"+852 22136233"];		  // random fixed line
+	[[PNPhoneBook sharedInstance] addPhoneNumber:@"+852 12136233"];		  // invalid number
+	[[PNPhoneBook sharedInstance] addPhoneNumber:@"56232322"];		      // random mobile without country code
+	[[PNPhoneBook sharedInstance] addPhoneNumber:@"22136230"];			  // without country code
+	[[PNPhoneBook sharedInstance] addPhoneNumber:@"92136233"];			  // without country code
+	[[PNPhoneBook sharedInstance] addPhoneNumber:@"9213623"];			  // invalid number
+	[[PNPhoneBook sharedInstance] addPhoneNumber:@"+442071234567"];		  // no space
+	[[PNPhoneBook sharedInstance] addPhoneNumber:@"+44 2  0 71234 56 7"]; // random spaces
+	[[PNPhoneBook sharedInstance] addPhoneNumber:@"+44 10 7123 4567"];	  // invalid number
+	[[PNPhoneBook sharedInstance] addPhoneNumber:@"44 20 7123 4567"];	  // without + for UK
+	[[PNPhoneBook sharedInstance] addPhoneNumber:@"+44 7700 900344"];	  // UK mobile
+	[[PNPhoneBook sharedInstance] addPhoneNumber:@"+44 3069 990840"];	  // UK fixed line
+	[[PNPhoneBook sharedInstance] addPhoneNumber:@"+1-202-555-0161"];	  // US fixed line
+	[[PNPhoneBook sharedInstance] addPhoneNumber:@"1-202555-0-161"];	  // without + for US
+	[[PNPhoneBook sharedInstance] addPhoneNumber:@"1-a2b0c2d5e550161"];   // with letters
+	[[PNPhoneBook sharedInstance] addPhoneNumber:@"202555-0-161"];		  // without country code
 
 
 	self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[PNPhoneBookViewController new]];
