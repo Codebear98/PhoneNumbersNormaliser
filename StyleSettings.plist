@@ -5,7 +5,7 @@
 	<key>kRequireSpaceAfterColon</key>
 	<false/>
 	<key>kRequireOpenBraceOnMethodSignatureLine</key>
-	<true/>
+	<false/>
 	<key>kRequireOpenBraceOnConditionalStatementLine</key>
 	<true/>
 	<key>kRequireSpaceBeforeOpeningBrace</key>

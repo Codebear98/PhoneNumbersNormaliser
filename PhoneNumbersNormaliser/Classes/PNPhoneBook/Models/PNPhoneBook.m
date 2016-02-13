@@ -19,7 +19,8 @@
 
 @implementation PNPhoneBook
 
-+ (instancetype)sharedInstance {
++ (instancetype)sharedInstance
+{
 
 	static PNPhoneBook * _sharedInstance = nil;
 	static dispatch_once_t onceToken;
@@ -31,7 +32,8 @@
 	return _sharedInstance;
 }
 
-- (instancetype)init {
+- (instancetype)init
+{
 	self = [super init];
 	if (self) {
 		self.phoneDatas = [[NSMutableArray alloc]init];
@@ -42,7 +44,8 @@
 
 #pragma mark - main logic
 
-- (nullable NSString *)phoneNumberAtIndex:(NSUInteger)index {
+- (nullable NSString *)phoneNumberAtIndex:(NSUInteger)index
+{
 
 	// guard clause
 	if (![self validateIndex:index]) {
@@ -52,7 +55,8 @@
 	return [self.phoneDatas objectAtIndex:index];;
 }
 
-- (BOOL)addPhoneNumber:(nonnull NSString *)phoneNumber {
+- (BOOL)addPhoneNumber:(nonnull NSString *)phoneNumber
+{
 
 	// guard clause
 	if (phoneNumber.length<1) {
@@ -64,7 +68,8 @@
 	return YES;
 }
 
-- (BOOL)removePhoneNumberAtIndex:(NSUInteger)index {
+- (BOOL)removePhoneNumberAtIndex:(NSUInteger)index
+{
 
 	// guard clause
 	if (![self validateIndex:index]) {
@@ -76,12 +81,28 @@
 	return YES;
 }
 
-- (NSUInteger)numberOfRecords {
+- (BOOL)updatePhoneNumber:(nonnull NSString *)phoneNumber atIndex:(NSUInteger)index
+{
+
+	// guard clause
+	if (![self validateIndex:index] ||
+		phoneNumber.length<1) {
+		return NO;
+	}
+
+	[self.phoneDatas replaceObjectAtIndex:index withObject:phoneNumber];
+
+	return YES;
+}
+
+- (NSUInteger)numberOfRecords
+{
 
 	return [self.phoneDatas count];
 }
 
-- (void)reset {
+- (void)reset
+{
 
 	[self.phoneDatas removeAllObjects];
 }
@@ -89,9 +110,17 @@
 #pragma mark - helper
 
 // verify if given index is valid
-- (BOOL)validateIndex:(NSUInteger)index {
+- (BOOL)validateIndex:(NSUInteger)index
+{
 
 	return index < self.phoneDatas.count;
+}
+
+#pragma mark - PNPhoneBookDataSource
+
+- (nonnull NSArray *)findAllPhoneRecords
+{
+	return [self.phoneDatas mutableCopy];
 }
 
 @end

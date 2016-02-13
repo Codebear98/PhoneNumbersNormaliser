@@ -16,7 +16,13 @@
 		F80922131C6EDBF4004C2163 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F80922121C6EDBF4004C2163 /* Assets.xcassets */; };
 		F80922161C6EDBF4004C2163 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F80922141C6EDBF4004C2163 /* LaunchScreen.storyboard */; };
 		F80922211C6EDBF5004C2163 /* PhoneNumbersNormaliserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F80922201C6EDBF5004C2163 /* PhoneNumbersNormaliserTests.m */; };
-		F8F4B3401C6EE6260004017E /* PNPhoneBook.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F4B33D1C6EE6260004017E /* PNPhoneBook.m */; settings = {ASSET_TAGS = (); }; };
+		F8F4B34C1C6EF3880004017E /* UIView+AutoLayoutHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F4B34B1C6EF3880004017E /* UIView+AutoLayoutHelper.m */; settings = {ASSET_TAGS = (); }; };
+		F8F4B3A01C6F1C100004017E /* PNPhoneBook.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F4B38D1C6F1C100004017E /* PNPhoneBook.m */; settings = {ASSET_TAGS = (); }; };
+		F8F4B3A11C6F1C100004017E /* PNPhoneBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F4B3911C6F1C100004017E /* PNPhoneBookViewController.m */; settings = {ASSET_TAGS = (); }; };
+		F8F4B3A31C6F1C100004017E /* PNPhoneListViewPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F4B3981C6F1C100004017E /* PNPhoneListViewPresenter.m */; settings = {ASSET_TAGS = (); }; };
+		F8F4B3A41C6F1C100004017E /* PNPhoneListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F4B39B1C6F1C100004017E /* PNPhoneListCell.m */; settings = {ASSET_TAGS = (); }; };
+		F8F4B3A51C6F1C100004017E /* PNPhoneListView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F4B39D1C6F1C100004017E /* PNPhoneListView.m */; settings = {ASSET_TAGS = (); }; };
+		F8F4B3AB1C6F21120004017E /* PNPhoneNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F4B3AA1C6F21120004017E /* PNPhoneNumber.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +55,22 @@
 		F809221C1C6EDBF5004C2163 /* PhoneNumbersNormaliserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhoneNumbersNormaliserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F80922201C6EDBF5004C2163 /* PhoneNumbersNormaliserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhoneNumbersNormaliserTests.m; sourceTree = "<group>"; };
 		F80922221C6EDBF5004C2163 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F8F4B33C1C6EE6260004017E /* PNPhoneBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNPhoneBook.h; sourceTree = "<group>"; };
-		F8F4B33D1C6EE6260004017E /* PNPhoneBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNPhoneBook.m; sourceTree = "<group>"; };
+		F8F4B34A1C6EF3880004017E /* UIView+AutoLayoutHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AutoLayoutHelper.h"; sourceTree = "<group>"; };
+		F8F4B34B1C6EF3880004017E /* UIView+AutoLayoutHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AutoLayoutHelper.m"; sourceTree = "<group>"; };
+		F8F4B38C1C6F1C100004017E /* PNPhoneBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNPhoneBook.h; sourceTree = "<group>"; };
+		F8F4B38D1C6F1C100004017E /* PNPhoneBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNPhoneBook.m; sourceTree = "<group>"; };
+		F8F4B38E1C6F1C100004017E /* PNPhoneBookDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNPhoneBookDataSource.h; sourceTree = "<group>"; };
+		F8F4B3901C6F1C100004017E /* PNPhoneBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNPhoneBookViewController.h; sourceTree = "<group>"; };
+		F8F4B3911C6F1C100004017E /* PNPhoneBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNPhoneBookViewController.m; sourceTree = "<group>"; };
+		F8F4B3971C6F1C100004017E /* PNPhoneListViewPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNPhoneListViewPresenter.h; sourceTree = "<group>"; };
+		F8F4B3981C6F1C100004017E /* PNPhoneListViewPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNPhoneListViewPresenter.m; sourceTree = "<group>"; };
+		F8F4B39A1C6F1C100004017E /* PNPhoneListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNPhoneListCell.h; sourceTree = "<group>"; };
+		F8F4B39B1C6F1C100004017E /* PNPhoneListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNPhoneListCell.m; sourceTree = "<group>"; };
+		F8F4B39C1C6F1C100004017E /* PNPhoneListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNPhoneListView.h; sourceTree = "<group>"; };
+		F8F4B39D1C6F1C100004017E /* PNPhoneListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNPhoneListView.m; sourceTree = "<group>"; };
+		F8F4B39E1C6F1C100004017E /* PNPhoneListViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNPhoneListViewDelegate.h; sourceTree = "<group>"; };
+		F8F4B3A91C6F21120004017E /* PNPhoneNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNPhoneNumber.h; sourceTree = "<group>"; };
+		F8F4B3AA1C6F21120004017E /* PNPhoneNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNPhoneNumber.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +136,8 @@
 		F80922051C6EDBF4004C2163 /* PhoneNumbersNormaliser */ = {
 			isa = PBXGroup;
 			children = (
-				F8F4B3391C6EE6260004017E /* Classes */,
+				F8F4B3881C6F1C100004017E /* Classes */,
+				F8F4B3481C6EF3880004017E /* Externals */,
 				F80922091C6EDBF4004C2163 /* AppDelegate.h */,
 				F809220A1C6EDBF4004C2163 /* AppDelegate.m */,
 				F809220C1C6EDBF4004C2163 /* ViewController.h */,
@@ -147,41 +168,110 @@
 			path = PhoneNumbersNormaliserTests;
 			sourceTree = "<group>";
 		};
-		F8F4B3391C6EE6260004017E /* Classes */ = {
+		F8F4B3481C6EF3880004017E /* Externals */ = {
 			isa = PBXGroup;
 			children = (
-				F8F4B33A1C6EE6260004017E /* PNNormalisedResult */,
-				F8F4B33B1C6EE6260004017E /* PNPhoneBook */,
-				F8F4B33E1C6EE6260004017E /* PNPhoneEntry */,
-				F8F4B33F1C6EE6260004017E /* PNPhoneNumberNormaliser */,
+				F8F4B3491C6EF3880004017E /* AutoLayoutHelper */,
+			);
+			path = Externals;
+			sourceTree = "<group>";
+		};
+		F8F4B3491C6EF3880004017E /* AutoLayoutHelper */ = {
+			isa = PBXGroup;
+			children = (
+				F8F4B34A1C6EF3880004017E /* UIView+AutoLayoutHelper.h */,
+				F8F4B34B1C6EF3880004017E /* UIView+AutoLayoutHelper.m */,
+			);
+			path = AutoLayoutHelper;
+			sourceTree = "<group>";
+		};
+		F8F4B3881C6F1C100004017E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F8F4B3891C6F1C100004017E /* PNNormalisedResult */,
+				F8F4B38A1C6F1C100004017E /* PNPhoneBook */,
+				F8F4B3951C6F1C100004017E /* PNPhoneList */,
+				F8F4B39F1C6F1C100004017E /* PNPhoneNumberNormaliser */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		F8F4B33A1C6EE6260004017E /* PNNormalisedResult */ = {
+		F8F4B3891C6F1C100004017E /* PNNormalisedResult */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = PNNormalisedResult;
 			sourceTree = "<group>";
 		};
-		F8F4B33B1C6EE6260004017E /* PNPhoneBook */ = {
+		F8F4B38A1C6F1C100004017E /* PNPhoneBook */ = {
 			isa = PBXGroup;
 			children = (
-				F8F4B33C1C6EE6260004017E /* PNPhoneBook.h */,
-				F8F4B33D1C6EE6260004017E /* PNPhoneBook.m */,
+				F8F4B38B1C6F1C100004017E /* Models */,
+				F8F4B38F1C6F1C100004017E /* ViewControllers */,
+				F8F4B3921C6F1C100004017E /* Views */,
 			);
 			path = PNPhoneBook;
 			sourceTree = "<group>";
 		};
-		F8F4B33E1C6EE6260004017E /* PNPhoneEntry */ = {
+		F8F4B38B1C6F1C100004017E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F8F4B38C1C6F1C100004017E /* PNPhoneBook.h */,
+				F8F4B38D1C6F1C100004017E /* PNPhoneBook.m */,
+				F8F4B3A91C6F21120004017E /* PNPhoneNumber.h */,
+				F8F4B3AA1C6F21120004017E /* PNPhoneNumber.m */,
+				F8F4B38E1C6F1C100004017E /* PNPhoneBookDataSource.h */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F8F4B38F1C6F1C100004017E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F8F4B3901C6F1C100004017E /* PNPhoneBookViewController.h */,
+				F8F4B3911C6F1C100004017E /* PNPhoneBookViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F8F4B3921C6F1C100004017E /* Views */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = PNPhoneEntry;
+			path = Views;
 			sourceTree = "<group>";
 		};
-		F8F4B33F1C6EE6260004017E /* PNPhoneNumberNormaliser */ = {
+		F8F4B3951C6F1C100004017E /* PNPhoneList */ = {
+			isa = PBXGroup;
+			children = (
+				F8F4B3961C6F1C100004017E /* ViewPresenters */,
+				F8F4B3991C6F1C100004017E /* Views */,
+			);
+			path = PNPhoneList;
+			sourceTree = "<group>";
+		};
+		F8F4B3961C6F1C100004017E /* ViewPresenters */ = {
+			isa = PBXGroup;
+			children = (
+				F8F4B3971C6F1C100004017E /* PNPhoneListViewPresenter.h */,
+				F8F4B3981C6F1C100004017E /* PNPhoneListViewPresenter.m */,
+			);
+			path = ViewPresenters;
+			sourceTree = "<group>";
+		};
+		F8F4B3991C6F1C100004017E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F8F4B39E1C6F1C100004017E /* PNPhoneListViewDelegate.h */,
+				F8F4B39C1C6F1C100004017E /* PNPhoneListView.h */,
+				F8F4B39D1C6F1C100004017E /* PNPhoneListView.m */,
+				F8F4B39A1C6F1C100004017E /* PNPhoneListCell.h */,
+				F8F4B39B1C6F1C100004017E /* PNPhoneListCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F8F4B39F1C6F1C100004017E /* PNPhoneNumberNormaliser */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -402,10 +492,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8F4B3A11C6F1C100004017E /* PNPhoneBookViewController.m in Sources */,
+				F8F4B3AB1C6F21120004017E /* PNPhoneNumber.m in Sources */,
+				F8F4B3A51C6F1C100004017E /* PNPhoneListView.m in Sources */,
 				F809220E1C6EDBF4004C2163 /* ViewController.m in Sources */,
+				F8F4B3A41C6F1C100004017E /* PNPhoneListCell.m in Sources */,
 				F809220B1C6EDBF4004C2163 /* AppDelegate.m in Sources */,
 				F80922081C6EDBF4004C2163 /* main.m in Sources */,
-				F8F4B3401C6EE6260004017E /* PNPhoneBook.m in Sources */,
+				F8F4B3A31C6F1C100004017E /* PNPhoneListViewPresenter.m in Sources */,
+				F8F4B3A01C6F1C100004017E /* PNPhoneBook.m in Sources */,
+				F8F4B34C1C6EF3880004017E /* UIView+AutoLayoutHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
