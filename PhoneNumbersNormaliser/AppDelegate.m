@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 
 #import "PNPhoneBookViewController.h"
+#import "PNPhoneBook.h"
 
 @interface AppDelegate ()
 
@@ -19,6 +20,18 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 	// Override point for customization after application launch.
+
+	// dummy data
+	[[PNPhoneBook sharedInstance] addPhoneNumber:@"+852 56232322"];
+	[[PNPhoneBook sharedInstance] addPhoneNumber:@"+852 92136233"];
+	[[PNPhoneBook sharedInstance] addPhoneNumber:@"+852 62136233"];
+	[[PNPhoneBook sharedInstance] addPhoneNumber:@"+852 22136233"];
+	[[PNPhoneBook sharedInstance] addPhoneNumber:@"+852 12136233"];
+	[[PNPhoneBook sharedInstance] addPhoneNumber:@"56232322"];
+	[[PNPhoneBook sharedInstance] addPhoneNumber:@"92136233"];
+	[[PNPhoneBook sharedInstance] addPhoneNumber:@"9213623"];
+	[[PNPhoneBook sharedInstance] addPhoneNumber:@"+44 20 7123 4567"];
+	[[PNPhoneBook sharedInstance] addPhoneNumber:@"44 20 7123 4567"];
 
 	self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[PNPhoneBookViewController new]];
 

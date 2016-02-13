@@ -10,4 +10,11 @@
 
 @interface PNPhoneListCell : UITableViewCell
 
+@property (nonatomic, strong) UILabel *originalNumberLabel;
+@property (nonatomic, strong) UILabel *nationalNumberLabel;
+@property (nonatomic, strong) UILabel *countryCodeLabel;
+@property (nonatomic, strong) UILabel *areaCodeLabel;
+@property (nonatomic, strong) UILabel *statusLabel;
+@property (nonatomic, strong) UILabel *phoneTypeLabel;
+
 @end

@@ -25,24 +25,6 @@
 
 @implementation PNPhoneBookViewController
 
-- (instancetype)init
-{
-	self = [super init];
-	if (self) {
-
-		// dummy data
-		[[PNPhoneBook sharedInstance] addPhoneNumber:@"123456789"];
-		[[PNPhoneBook sharedInstance] addPhoneNumber:@"8976543"];
-		[[PNPhoneBook sharedInstance] addPhoneNumber:@"76543"];
-		[[PNPhoneBook sharedInstance] addPhoneNumber:@"2345678765"];
-		[[PNPhoneBook sharedInstance] addPhoneNumber:@"345678"];
-		[[PNPhoneBook sharedInstance] addPhoneNumber:@"3456"];
-
-	}
-
-	return self;
-}
-
 - (void)loadView
 {
     [super loadView];
@@ -51,7 +33,6 @@
 
 	[self setupBarButtons];
 	[self setupPhoneListView];
-
 	[self setupConstraints];
 
 }
@@ -89,7 +70,7 @@
 	PNPhoneListView *listView = [[PNPhoneListView alloc]init];
 	PNPhoneListViewPresenter *presenter = [[PNPhoneListViewPresenter alloc] initWithPhoneBookData:phoneBookData
 																					phoneListView:listView];
-
+	
 	return presenter;
 }
 

@@ -10,9 +10,10 @@
 
 @interface PNPhoneNumber : NSObject
 
-@property (nonatomic, strong) NSString *phoneNumber;
+@property (nonatomic, strong) NSString *nationalNumber;
 @property (nonatomic, strong) NSString *countryCode;
 @property (nonatomic, strong) NSString *areaCode;
 @property (nonatomic, assign) BOOL isMobile;
+@property (nonatomic, assign) BOOL isValid;
 
 @end
