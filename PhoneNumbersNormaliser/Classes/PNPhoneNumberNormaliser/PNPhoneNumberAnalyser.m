@@ -33,11 +33,11 @@ static const NSString * PNRegion_BackFill = @"HK";
 
 - (nonnull PNPhoneNumber *)analyse:(nonnull NSString *)phoneNubmerString
 {
+
+	NBPhoneNumberUtil *phoneUtil = [NBPhoneNumberUtil sharedInstance];
 	PNPhoneNumber *pnPhoneNumber = nil;
 
 	NSString *region = (self.defaultRegion) ? self.defaultRegion:PNRegion_BackFill;
-
-	NBPhoneNumberUtil *phoneUtil = [NBPhoneNumberUtil sharedInstance];
 
 	NSError *aError = nil;
 	NBPhoneNumber *nbPhoneNumber = [phoneUtil parse:phoneNubmerString defaultRegion:region error:&aError];
@@ -45,15 +45,29 @@ static const NSString * PNRegion_BackFill = @"HK";
 	if (!aError) {
 		// Should check error
 		pnPhoneNumber = [self convertToPNPhoneNumber:nbPhoneNumber];
-		pnPhoneNumber.isValid = [phoneUtil isValidNumber:nbPhoneNumber];
-		
+
+		if ([phoneUtil isValidNumber:nbPhoneNumber]) {
+			pnPhoneNumber.isValid = YES;
+
+		} else {
+			// check if it just missing "+"
+			NSString *phoneNubmerStringPlus = [NSString stringWithFormat:@"+%@", phoneNubmerString];
+
+			NBPhoneNumber *plusNBPhoneNumber = [phoneUtil parse:phoneNubmerStringPlus defaultRegion:region error:&aError];
+
+			if ([phoneUtil isValidNumber:plusNBPhoneNumber]) {
+				pnPhoneNumber = [self convertToPNPhoneNumber:plusNBPhoneNumber];
+				pnPhoneNumber.isValid = YES;
+			}
+		}
+
 	} else {
 
 		if ([aError.domain isEqualToString:@"INVALID_COUNTRY_CODE"]) {
 
 			// Guess the country code
 			pnPhoneNumber = [PNPhoneNumber new];
-			pnPhoneNumber.nationalNumber = phoneNubmerString;
+			pnPhoneNumber.phoneNumber = phoneNubmerString;
 			pnPhoneNumber.countryCode = [phoneUtil getCountryCodeForRegion:region].stringValue;
 
 			pnPhoneNumber.isValid = NO;
@@ -97,32 +111,41 @@ static const NSString * PNRegion_BackFill = @"HK";
 	if (phoneNumberType == NBEPhoneNumberTypeMOBILE) {
 
 		pnPhoneNumber.isMobile = YES;
+		pnPhoneNumber.phoneNumber = nbPhoneNumber.nationalNumber.stringValue;
+
 	} else {
 
-		pnPhoneNumber.areaCode = [self extractAreaCode:nbPhoneNumber];
+		NSString *phoneNumberString = nil;
+		pnPhoneNumber.areaCode = [self extractAreaCodeAndPhoneNumber:&phoneNumberString withNBPhoneNumber:nbPhoneNumber];
+		pnPhoneNumber.phoneNumber = phoneNumberString;
+
 	}
 
-	pnPhoneNumber.nationalNumber = nbPhoneNumber.nationalNumber.stringValue;
 	pnPhoneNumber.countryCode = nbPhoneNumber.countryCode.stringValue;
 
 	return pnPhoneNumber;
 }
 
-- (NSString *)extractAreaCode:(NBPhoneNumber *)nbPhoneNumber
+- (NSString *)extractAreaCodeAndPhoneNumber:(NSString **)phoneNumber withNBPhoneNumber:(NBPhoneNumber *)nbPhoneNumber
 {
 	NBPhoneNumberUtil *phoneUtil = [NBPhoneNumberUtil sharedInstance];
 
-	NSString *nationalDestinationCode = nil;
+	NSString *areaCode = nil;
 	NSString *nationalSignificantNumber = [phoneUtil getNationalSignificantNumber:nbPhoneNumber];
 
 	NSError *aError = nil;
-	int nationalDestinationCodeLength = [phoneUtil getLengthOfNationalDestinationCode:nbPhoneNumber error:&aError];
+	int codeLength = [phoneUtil getLengthOfGeographicalAreaCode:nbPhoneNumber error:&aError];
 
-	if (!aError && nationalDestinationCodeLength > 0) {
-		nationalDestinationCode = [nationalSignificantNumber substringToIndex:nationalDestinationCodeLength];
+	if (!aError && codeLength > 0) {
+		areaCode = [nationalSignificantNumber substringToIndex:codeLength];
+		*phoneNumber = [nationalSignificantNumber substringFromIndex:codeLength];
+
+	} else {
+
+		*phoneNumber = nationalSignificantNumber;
 	}
-	
-	return nationalDestinationCode;
+
+	return areaCode;
 }
 
 @end

@@ -106,7 +106,7 @@ typedef NS_ENUM(NSInteger, PNPhoneListViewMode) {
 	if (self.listViewMode == PNPhoneListViewModeNormalised) {
 
 		PNPhoneNumber *phoneNumber = [_analyzedPhoneNumbers objectAtIndex:indexPath.row];
-		cell.nationalNumberLabel.text = phoneNumber.nationalNumber;
+		cell.phoneNumberLabel.text = phoneNumber.phoneNumber;
 		cell.areaCodeLabel.text = phoneNumber.areaCode;
 		cell.countryCodeLabel.text = phoneNumber.countryCode;
 		cell.statusLabel.text = (phoneNumber.isValid) ? @"Valid":@"Invalid";

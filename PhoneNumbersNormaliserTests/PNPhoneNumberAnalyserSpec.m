@@ -67,7 +67,7 @@ describe(@"PNPhoneNumberAnalyserSpec", ^{
 
 				PNPhoneNumber *phoneNumber = [phoneNumberAnalyser analyse:numberString];
 
-				[[phoneNumber.nationalNumber should]equal:numberString];
+				[[phoneNumber.phoneNumber should]equal:numberString];
 				
 			});
 
@@ -97,7 +97,7 @@ describe(@"PNPhoneNumberAnalyserSpec", ^{
 				PNPhoneNumber *phoneNumber = [phoneNumberAnalyser analyse:numberString];
 
 				[[phoneNumber.countryCode should]equal:@"852"];
-				[[phoneNumber.nationalNumber should]equal:@"52345674"];
+				[[phoneNumber.phoneNumber should]equal:@"52345674"];
 			});
 			
 		});
@@ -114,7 +114,7 @@ describe(@"PNPhoneNumberAnalyserSpec", ^{
 			it(@"Should return be able to identify the country code", ^{
 
 				[[phoneNumber.countryCode should]equal:@"852"];
-				[[phoneNumber.nationalNumber should]equal:@"92345674"];
+				[[phoneNumber.phoneNumber should]equal:@"92345674"];
 			});
 
 			it(@"Should return be able to identify as mobile number", ^{
@@ -141,7 +141,7 @@ describe(@"PNPhoneNumberAnalyserSpec", ^{
 			it(@"Should return be able to identify the country code and national number", ^{
 
 				[[phoneNumber.countryCode should]equal:@"852"];
-				[[phoneNumber.nationalNumber should]equal:@"62345674"];
+				[[phoneNumber.phoneNumber should]equal:@"62345674"];
 			});
 
 			it(@"Should return be able to identify as mobile number", ^{
@@ -155,7 +155,34 @@ describe(@"PNPhoneNumberAnalyserSpec", ^{
 			});
 
 		});
-		
+
+		describe(@"When anaylse a UK international mobile number", ^{
+
+			__block PNPhoneNumber *phoneNumber = nil;
+
+			beforeAll(^{
+
+				phoneNumber = [phoneNumberAnalyser analyse:@"+44 7700 900344"];
+			});
+
+			it(@"Should return be able to identify the country code and national number", ^{
+
+				[[phoneNumber.countryCode should]equal:@"44"];
+				[[phoneNumber.phoneNumber should]equal:@"7700900344"];
+			});
+
+			it(@"Should return be able to identify as mobile number", ^{
+
+				[[theValue(phoneNumber.isMobile) should]equal:theValue(YES)];
+			});
+
+			it(@"Should return nil areacode", ^{
+
+				[[phoneNumber.areaCode should]beNil];
+			});
+			
+		});
+
 	});
 
 });
