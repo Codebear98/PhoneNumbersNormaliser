@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2739CCDF8093CD51A1034198 /* libPods-PhoneNumbersNormaliser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3482D288398B67E6FEE695B8 /* libPods-PhoneNumbersNormaliser.a */; };
+		C8E9313B4BD0D02E991938DC /* libPods-PhoneNumbersNormaliserTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DB32DCF1E3D1A3453F5F702 /* libPods-PhoneNumbersNormaliserTests.a */; };
 		F80922081C6EDBF4004C2163 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F80922071C6EDBF4004C2163 /* main.m */; };
 		F809220B1C6EDBF4004C2163 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F809220A1C6EDBF4004C2163 /* AppDelegate.m */; };
 		F809220E1C6EDBF4004C2163 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F809220D1C6EDBF4004C2163 /* ViewController.m */; };
@@ -27,6 +29,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1DB32DCF1E3D1A3453F5F702 /* libPods-PhoneNumbersNormaliserTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PhoneNumbersNormaliserTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A238CE8301F4481CAFF26B6 /* Pods-PhoneNumbersNormaliser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhoneNumbersNormaliser.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PhoneNumbersNormaliser/Pods-PhoneNumbersNormaliser.debug.xcconfig"; sourceTree = "<group>"; };
+		3482D288398B67E6FEE695B8 /* libPods-PhoneNumbersNormaliser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PhoneNumbersNormaliser.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		77A8350B4DC4A5DBB94EFA82 /* Pods-PhoneNumbersNormaliserTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhoneNumbersNormaliserTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhoneNumbersNormaliserTests/Pods-PhoneNumbersNormaliserTests.release.xcconfig"; sourceTree = "<group>"; };
+		7A21A7B386815DEB4D2414C2 /* Pods-PhoneNumbersNormaliser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhoneNumbersNormaliser.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhoneNumbersNormaliser/Pods-PhoneNumbersNormaliser.release.xcconfig"; sourceTree = "<group>"; };
+		942F2FA4A34387962150DCCA /* Pods-PhoneNumbersNormaliserTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhoneNumbersNormaliserTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PhoneNumbersNormaliserTests/Pods-PhoneNumbersNormaliserTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F80922031C6EDBF4004C2163 /* PhoneNumbersNormaliser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhoneNumbersNormaliser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F80922071C6EDBF4004C2163 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F80922091C6EDBF4004C2163 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -47,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2739CCDF8093CD51A1034198 /* libPods-PhoneNumbersNormaliser.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,18 +63,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8E9313B4BD0D02E991938DC /* libPods-PhoneNumbersNormaliserTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0439C794784F70A2FE2012AC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3482D288398B67E6FEE695B8 /* libPods-PhoneNumbersNormaliser.a */,
+				1DB32DCF1E3D1A3453F5F702 /* libPods-PhoneNumbersNormaliserTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6A7C627F9634327D192292E6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2A238CE8301F4481CAFF26B6 /* Pods-PhoneNumbersNormaliser.debug.xcconfig */,
+				7A21A7B386815DEB4D2414C2 /* Pods-PhoneNumbersNormaliser.release.xcconfig */,
+				942F2FA4A34387962150DCCA /* Pods-PhoneNumbersNormaliserTests.debug.xcconfig */,
+				77A8350B4DC4A5DBB94EFA82 /* Pods-PhoneNumbersNormaliserTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F80921FA1C6EDBF4004C2163 = {
 			isa = PBXGroup;
 			children = (
 				F80922051C6EDBF4004C2163 /* PhoneNumbersNormaliser */,
 				F809221F1C6EDBF5004C2163 /* PhoneNumbersNormaliserTests */,
 				F80922041C6EDBF4004C2163 /* Products */,
+				6A7C627F9634327D192292E6 /* Pods */,
+				0439C794784F70A2FE2012AC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,9 +150,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F80922251C6EDBF5004C2163 /* Build configuration list for PBXNativeTarget "PhoneNumbersNormaliser" */;
 			buildPhases = (
+				D8A1C02240C64305B0154069 /* Check Pods Manifest.lock */,
 				F80921FF1C6EDBF4004C2163 /* Sources */,
 				F80922001C6EDBF4004C2163 /* Frameworks */,
 				F80922011C6EDBF4004C2163 /* Resources */,
+				04A77CF864EDA73848C6DB74 /* Embed Pods Frameworks */,
+				946F2E90C21CC0DD7265AAD8 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -135,9 +170,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F80922281C6EDBF5004C2163 /* Build configuration list for PBXNativeTarget "PhoneNumbersNormaliserTests" */;
 			buildPhases = (
+				0A3129E213B3BD995D5B8622 /* Check Pods Manifest.lock */,
 				F80922181C6EDBF5004C2163 /* Sources */,
 				F80922191C6EDBF5004C2163 /* Frameworks */,
 				F809221A1C6EDBF5004C2163 /* Resources */,
+				05A6F0D85A5A0ECDBB32CFED /* Embed Pods Frameworks */,
+				31CF1C2CD873826DFF55D12B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -205,6 +243,99 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		04A77CF864EDA73848C6DB74 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PhoneNumbersNormaliser/Pods-PhoneNumbersNormaliser-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		05A6F0D85A5A0ECDBB32CFED /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PhoneNumbersNormaliserTests/Pods-PhoneNumbersNormaliserTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0A3129E213B3BD995D5B8622 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		31CF1C2CD873826DFF55D12B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PhoneNumbersNormaliserTests/Pods-PhoneNumbersNormaliserTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		946F2E90C21CC0DD7265AAD8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PhoneNumbersNormaliser/Pods-PhoneNumbersNormaliser-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D8A1C02240C64305B0154069 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F80921FF1C6EDBF4004C2163 /* Sources */ = {
@@ -339,6 +470,7 @@
 		};
 		F80922261C6EDBF5004C2163 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A238CE8301F4481CAFF26B6 /* Pods-PhoneNumbersNormaliser.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PhoneNumbersNormaliser/Info.plist;
@@ -350,6 +482,7 @@
 		};
 		F80922271C6EDBF5004C2163 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A21A7B386815DEB4D2414C2 /* Pods-PhoneNumbersNormaliser.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PhoneNumbersNormaliser/Info.plist;
@@ -361,6 +494,7 @@
 		};
 		F80922291C6EDBF5004C2163 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 942F2FA4A34387962150DCCA /* Pods-PhoneNumbersNormaliserTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = PhoneNumbersNormaliserTests/Info.plist;
@@ -373,6 +507,7 @@
 		};
 		F809222A1C6EDBF5004C2163 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77A8350B4DC4A5DBB94EFA82 /* Pods-PhoneNumbersNormaliserTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = PhoneNumbersNormaliserTests/Info.plist;
@@ -402,6 +537,7 @@
 				F80922271C6EDBF5004C2163 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F80922281C6EDBF5004C2163 /* Build configuration list for PBXNativeTarget "PhoneNumbersNormaliserTests" */ = {
 			isa = XCConfigurationList;
@@ -410,6 +546,7 @@
 				F809222A1C6EDBF5004C2163 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
