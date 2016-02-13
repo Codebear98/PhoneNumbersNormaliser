@@ -10,7 +10,7 @@
 #import "PNPhoneBookDataSource.h"
 
 /*
- A very simple phonebook where phone numbers could be in any any patterns of string
+ A very simple phonebook where phone numbers could be in any format
  */
 @interface PNPhoneBook : NSObject <PNPhoneBookDataSource>
 

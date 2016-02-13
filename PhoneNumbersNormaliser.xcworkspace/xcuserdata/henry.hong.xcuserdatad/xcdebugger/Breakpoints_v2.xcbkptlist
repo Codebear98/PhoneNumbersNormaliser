@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PhoneNumbersNormaliser/Classes/PNPhoneNumberNormaliser/PNPhoneNumberAnalyser.m"
-            timestampString = "477090188.569622"
+            timestampString = "477092341.202675"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "-analyse:"
             landmarkType = "5">
          </BreakpointContent>

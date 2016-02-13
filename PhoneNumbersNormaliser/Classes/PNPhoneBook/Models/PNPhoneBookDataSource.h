@@ -10,6 +10,11 @@
 
 @protocol PNPhoneBookDataSource <NSObject>
 
+/**
+ *
+ * @return an Array of string
+ */
+@required
 - (nonnull NSArray *)findAllPhoneRecords;
 
 @end

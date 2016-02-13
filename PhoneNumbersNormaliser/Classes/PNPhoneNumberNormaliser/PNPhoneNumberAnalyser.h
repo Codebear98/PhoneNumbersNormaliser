@@ -11,10 +11,23 @@
 
 @interface PNPhoneNumberAnalyser : NSObject
 
+/**
+ * displays in normalised mode
+ */
 - (nonnull instancetype)initWithDefaultRegion:(nonnull NSString *)defaultRegion;
 
+/**
+ * analyse the given phone number with default region
+ * @param the phone number string
+ * @return a PNPhoneNumber object with analysed phone information
+ */
 - (nonnull PNPhoneNumber *)analyse:(nonnull NSString *)phoneNubmerString;
 
+/**
+ * analyse the given phone number with carrier region, the region where the sim card registered.
+ * @param the phone number string
+ * @return a PNPhoneNumber object with analysed phone information
+ */
 - (nonnull PNPhoneNumber *)analyseWithCarrierRegion:(nonnull NSString *)phoneNubmerString;
 
 @end

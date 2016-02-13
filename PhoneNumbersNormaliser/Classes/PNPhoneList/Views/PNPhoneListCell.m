@@ -11,8 +11,11 @@
 
 static CGFloat const kPNPhoneListCell_LeftPadding = 15.0f;
 static CGFloat const kPNPhoneListCell_RightPadding = 15.0f;
+static CGFloat const kPNPhoneListCell_TopPadding = 15.0f;
 static CGFloat const kPNPhoneListCell_Padding = 5.0f;
+static CGFloat const kPNPhoneListCell_OriginalNumberLabelWidth = 160.0f;
 static CGFloat const kPNPhoneListCell_TitleLabelWidth = 85.0f;
+static CGFloat const kPNPhoneListCell_LabelHeight = 18.0f;
 
 #define PNPhoneListCell_SmallFont [UIFont systemFontOfSize:10.0]
 #define PNPhoneListCell_LargeFont [UIFont systemFontOfSize:16.0]
@@ -23,11 +26,11 @@ static CGFloat const kPNPhoneListCell_TitleLabelWidth = 85.0f;
 
 @interface PNPhoneListCell()
 
+@property (nonatomic, strong) UILabel *originalNumberTitleLabel;
 @property (nonatomic, strong) UILabel *phoneNumberTitleLabel;
 @property (nonatomic, strong) UILabel *countryCodeTitleLabel;
 @property (nonatomic, strong) UILabel *areaCodeTitleLabel;
 @property (nonatomic, strong) UILabel *phoneTypeTitleLabel;
-@property (nonatomic, strong) UILabel *statusTitleLabel;
 
 @end
 
@@ -103,7 +106,7 @@ static CGFloat const kPNPhoneListCell_TitleLabelWidth = 85.0f;
 	_phoneNumberTitleLabel = [UILabel new];
 	_countryCodeTitleLabel = [UILabel new];
 	_areaCodeTitleLabel = [UILabel new];
-	_statusTitleLabel = [UILabel new];
+	_originalNumberTitleLabel = [UILabel new];
 	_phoneTypeTitleLabel = [UILabel new];
 
 	_phoneNumberTitleLabel.font = smallFont;
@@ -112,21 +115,21 @@ static CGFloat const kPNPhoneListCell_TitleLabelWidth = 85.0f;
 	_countryCodeTitleLabel.textColor = titleColor;
 	_areaCodeTitleLabel.font = smallFont;
 	_areaCodeTitleLabel.textColor = titleColor;
-	_statusTitleLabel.font = smallFont;
-	_statusTitleLabel.textColor = titleColor;
+	_originalNumberTitleLabel.font = smallFont;
+	_originalNumberTitleLabel.textColor = titleColor;
 	_phoneTypeTitleLabel.font = smallFont;
 	_phoneTypeTitleLabel.textColor = titleColor;
 
 	_phoneNumberTitleLabel.text = @"Phone Number: ";
 	_countryCodeTitleLabel.text = @"Country Code: ";
 	_areaCodeTitleLabel.text = @"Area Code: ";
-	_statusTitleLabel.text = @"Status: ";
+	_originalNumberTitleLabel.text = @"Original: ";
 	_phoneTypeTitleLabel.text = @"IsMobile: ";
 
 	[self.contentView addSubview:_phoneNumberTitleLabel];
 	[self.contentView addSubview:_countryCodeTitleLabel];
 	[self.contentView addSubview:_areaCodeTitleLabel];
-	[self.contentView addSubview:_statusTitleLabel];
+	[self.contentView addSubview:_originalNumberTitleLabel];
 	[self.contentView addSubview:_phoneTypeTitleLabel];
 
 }
@@ -145,10 +148,17 @@ static CGFloat const kPNPhoneListCell_TitleLabelWidth = 85.0f;
 
 - (void)setupOrginalNumberConstraints
 {
+
 	_originalNumberLabel.translatesAutoresizingMaskIntoConstraints = NO;
 	[_originalNumberLabel addLeftConstraintToView:self.contentView relation:NSLayoutRelationEqual constant:kPNPhoneListCell_LeftPadding];
 	[_originalNumberLabel addCenterYConstraintToView:self.contentView];
-	[_originalNumberLabel addWidthConstraintWithRelation:NSLayoutRelationEqual constant:160.0];
+	[_originalNumberLabel addWidthConstraintWithRelation:NSLayoutRelationEqual constant:kPNPhoneListCell_OriginalNumberLabelWidth];
+
+	_originalNumberTitleLabel.translatesAutoresizingMaskIntoConstraints = NO;
+	[_originalNumberTitleLabel addLeftConstraintToView:_originalNumberLabel relation:NSLayoutRelationEqual constant:0.0];
+	[_originalNumberTitleLabel addBottomConstraintToView:_originalNumberLabel attribute:NSLayoutAttributeTop relation:NSLayoutRelationEqual constant:-kPNPhoneListCell_Padding / 2];
+	[_originalNumberTitleLabel addWidthConstraintWithRelation:NSLayoutRelationEqual constant:kPNPhoneListCell_TitleLabelWidth];
+	[_originalNumberTitleLabel addHeightConstraintWithRelation:NSLayoutRelationEqual constant:kPNPhoneListCell_LabelHeight];
 }
 
 - (void)setupCountryCodeConstaints
@@ -208,9 +218,9 @@ static CGFloat const kPNPhoneListCell_TitleLabelWidth = 85.0f;
 {
 	_statusLabel.translatesAutoresizingMaskIntoConstraints = NO;
 	[_statusLabel addLeftConstraintToView:self.contentView relation:NSLayoutRelationEqual constant:kPNPhoneListCell_LeftPadding];
-	[_statusLabel addTopConstraintToView:self.contentView relation:NSLayoutRelationEqual constant:kPNPhoneListCell_Padding];
+	[_statusLabel addBottomConstraintToView:self.contentView relation:NSLayoutRelationEqual constant:-kPNPhoneListCell_Padding];
 	[_statusLabel addWidthConstraintWithRelation:NSLayoutRelationEqual constant:kPNPhoneListCell_TitleLabelWidth];
-	[_statusLabel addHeightConstraintWithRelation:NSLayoutRelationEqual constant:20.0f];
+	[_statusLabel addHeightConstraintWithRelation:NSLayoutRelationEqual constant:kPNPhoneListCell_LabelHeight];
 
 }
 

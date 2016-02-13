@@ -19,9 +19,14 @@
 - (instancetype)initWithPhoneBookData:(id <PNPhoneBookDataSource>)phoneBookData
 						phoneListView:(PNPhoneListView *)phoneListView;
 
-
+/**
+ * fetch data from the datasource and populate to views.
+ */
 - (void)displayPhoneListFromPhoneBookData;
 
+/**
+ * displays in normalised mode
+ */
 - (void)displayNormalisedPhoneListFromPhoneBookData;
 
 @end

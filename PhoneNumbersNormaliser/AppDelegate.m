@@ -35,6 +35,13 @@
 	[[PNPhoneBook sharedInstance] addPhoneNumber:@"+44 2  0 71234 56 7"];
 	[[PNPhoneBook sharedInstance] addPhoneNumber:@"+44 10 7123 4567"];
 	[[PNPhoneBook sharedInstance] addPhoneNumber:@"44 20 7123 4567"];
+	[[PNPhoneBook sharedInstance] addPhoneNumber:@"+44 7700 900344"];
+	[[PNPhoneBook sharedInstance] addPhoneNumber:@"+44 3069 990840"];
+	[[PNPhoneBook sharedInstance] addPhoneNumber:@"+1-202-555-0161"];
+	[[PNPhoneBook sharedInstance] addPhoneNumber:@"1-202555-0-161"];
+	[[PNPhoneBook sharedInstance] addPhoneNumber:@"1-a2b0c2d5e550161"];
+	[[PNPhoneBook sharedInstance] addPhoneNumber:@"202555-0-161"];
+
 
 	self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[PNPhoneBookViewController new]];
 

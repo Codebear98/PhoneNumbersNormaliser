@@ -109,7 +109,7 @@ typedef NS_ENUM(NSInteger, PNPhoneListViewMode) {
 		cell.phoneNumberLabel.text = phoneNumber.phoneNumber;
 		cell.areaCodeLabel.text = phoneNumber.areaCode;
 		cell.countryCodeLabel.text = phoneNumber.countryCode;
-		cell.statusLabel.text = (phoneNumber.isValid) ? @"Valid":@"Invalid";
+		cell.statusLabel.text = (phoneNumber.isValid) ? @"Valid Number":@"Invalid Number";
 		cell.statusLabel.textColor = (phoneNumber.isValid) ? UIColorFromHex(0x00B200):UIColorFromHex(0xCC0000);
 		cell.phoneTypeLabel.text = (phoneNumber.isMobile) ? @"YES":@"NO";
 

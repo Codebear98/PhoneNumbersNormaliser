@@ -35,6 +35,7 @@ static const NSString * PNRegion_BackFill = @"HK";
 {
 
 	NBPhoneNumberUtil *phoneUtil = [NBPhoneNumberUtil sharedInstance];
+	phoneNubmerString = [phoneUtil normalizeDigitsOnly:phoneNubmerString];
 	PNPhoneNumber *pnPhoneNumber = nil;
 
 	NSString *region = (self.defaultRegion) ? self.defaultRegion:PNRegion_BackFill;
