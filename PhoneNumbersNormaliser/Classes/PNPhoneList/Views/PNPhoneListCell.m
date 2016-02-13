@@ -11,7 +11,6 @@
 
 static CGFloat const kPNPhoneListCell_LeftPadding = 15.0f;
 static CGFloat const kPNPhoneListCell_RightPadding = 15.0f;
-static CGFloat const kPNPhoneListCell_TopPadding = 15.0f;
 static CGFloat const kPNPhoneListCell_Padding = 5.0f;
 static CGFloat const kPNPhoneListCell_OriginalNumberLabelWidth = 160.0f;
 static CGFloat const kPNPhoneListCell_TitleLabelWidth = 85.0f;

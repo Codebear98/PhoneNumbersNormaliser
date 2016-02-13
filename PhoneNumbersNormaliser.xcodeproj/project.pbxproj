@@ -201,7 +201,6 @@
 		F8F4B3881C6F1C100004017E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				F8F4B3891C6F1C100004017E /* PNNormalisedResult */,
 				F8F4B38A1C6F1C100004017E /* PNPhoneBook */,
 				F8F4B3951C6F1C100004017E /* PNPhoneList */,
 				F8F4B39F1C6F1C100004017E /* PNPhoneNumberNormaliser */,
@@ -209,19 +208,11 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		F8F4B3891C6F1C100004017E /* PNNormalisedResult */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = PNNormalisedResult;
-			sourceTree = "<group>";
-		};
 		F8F4B38A1C6F1C100004017E /* PNPhoneBook */ = {
 			isa = PBXGroup;
 			children = (
 				F8F4B38B1C6F1C100004017E /* Models */,
 				F8F4B38F1C6F1C100004017E /* ViewControllers */,
-				F8F4B3921C6F1C100004017E /* Views */,
 			);
 			path = PNPhoneBook;
 			sourceTree = "<group>";
@@ -245,13 +236,6 @@
 				F8F4B3911C6F1C100004017E /* PNPhoneBookViewController.m */,
 			);
 			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		F8F4B3921C6F1C100004017E /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		F8F4B3951C6F1C100004017E /* PNPhoneList */ = {
