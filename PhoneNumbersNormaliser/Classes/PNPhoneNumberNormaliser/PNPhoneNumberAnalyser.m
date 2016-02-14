@@ -111,7 +111,7 @@
 	PNPhoneNumber *pnPhoneNumber = [PNPhoneNumber new];
 
 	NBEPhoneNumberType phoneNumberType = [phoneUtil getNumberType:nbPhoneNumber];
-	NSLog(@"%@, NBEPhoneNumberType %ld", nbPhoneNumber.nationalNumber, phoneNumberType);
+//	NSLog(@"%@, NBEPhoneNumberType %ld", nbPhoneNumber.nationalNumber, phoneNumberType);
 
 	if (phoneNumberType == NBEPhoneNumberTypeMOBILE) {
 
