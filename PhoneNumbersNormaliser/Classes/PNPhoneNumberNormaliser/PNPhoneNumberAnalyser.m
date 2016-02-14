@@ -35,7 +35,16 @@
 {
 
 	NBPhoneNumberUtil *phoneUtil = [NBPhoneNumberUtil sharedInstance];
+
+	BOOL withPlusSign = [phoneNubmerString rangeOfString:@"+"].location == 0;
+
 	phoneNubmerString = [phoneUtil normalizeDigitsOnly:phoneNubmerString];
+
+	if (withPlusSign && [phoneNubmerString rangeOfString:@"+"].location == NSNotFound) {
+		// add it back if it lost plus sign after normalisation
+		phoneNubmerString = [NSString stringWithFormat:@"+%@", phoneNubmerString];
+	}
+
 	PNPhoneNumber *pnPhoneNumber = nil;
 	NSString *region = nil;
 
@@ -63,7 +72,7 @@
 			pnPhoneNumber.isValid = YES;
 
 		} else {
-			// check if it just missing "+"
+			// check if error because of just missing "+"
 			NSString *phoneNubmerStringPlus = [NSString stringWithFormat:@"+%@", phoneNubmerString];
 
 			NBPhoneNumber *plusNBPhoneNumber = [phoneUtil parse:phoneNubmerStringPlus defaultRegion:region error:&aError];
@@ -102,6 +111,7 @@
 	PNPhoneNumber *pnPhoneNumber = [PNPhoneNumber new];
 
 	NBEPhoneNumberType phoneNumberType = [phoneUtil getNumberType:nbPhoneNumber];
+	NSLog(@"%@, NBEPhoneNumberType %ld", nbPhoneNumber.nationalNumber, phoneNumberType);
 
 	if (phoneNumberType == NBEPhoneNumberTypeMOBILE) {
 
