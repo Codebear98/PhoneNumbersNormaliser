@@ -25,7 +25,7 @@
 - (void)displayPhoneListFromPhoneBookData;
 
 /**
- * displays in normalised mode
+ * displays the normalised information
  */
 - (void)displayNormalisedPhoneListFromPhoneBookData;
 

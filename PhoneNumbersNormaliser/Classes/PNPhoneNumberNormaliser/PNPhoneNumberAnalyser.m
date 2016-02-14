@@ -100,6 +100,8 @@ static const NSString * PNRegion_BackFill = @"HK";
 	return pnPhoneNumber;
 }
 
+#pragma mark - Internal Methods
+
 - (PNPhoneNumber *)convertToPNPhoneNumber:(NBPhoneNumber *)nbPhoneNumber
 {
 
