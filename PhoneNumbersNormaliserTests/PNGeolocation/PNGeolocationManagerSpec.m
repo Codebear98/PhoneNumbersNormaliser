@@ -61,12 +61,15 @@ describe(@"PNGeolocationManagerSpec", ^{
 
 			[[mockCLLocationManager should] receive:@selector(requestLocation)];
 
-			[geolocationManager requestLocation:nil];
+			[geolocationManager requestCurrentPlacemark:nil];
 		});
 
-		it(@"should notify to callback when location is updated", ^{
+		it(@"should trigger reverseGeocodeLocation when location is updated", ^{
 
-			[[geolocationManager should]receive:@selector(notifyWithResult)];
+			CLGeocoder *mockGeocoder = [CLGeocoder nullMock];
+			[geolocationManager stub:@selector(geocoder) andReturn:mockGeocoder];
+			
+			[[mockGeocoder should]receive:@selector(reverseGeocodeLocation:completionHandler:)];
 			
 			CLLocation *mockCLLocation = [CLLocation nullMock];
 			[geolocationManager locationManager:mockCLLocationManager didUpdateLocations:@[mockCLLocation]];
@@ -83,14 +86,14 @@ describe(@"PNGeolocationManagerSpec", ^{
 
 		it(@"should return detected location object if notifyWithResult is trigger", ^{
 
-			__block CLLocation *mockCLLocation = [CLLocation nullMock];
-			__block CLLocation *returnLocation = nil;
+			__block CLPlacemark *mockCLPlacemark = [CLPlacemark nullMock];
+			__block CLPlacemark *returnPlacemark = nil;
 
-			[geolocationManager stub:@selector(currentDetectedLocation) andReturn:mockCLLocation];
+			[geolocationManager stub:@selector(currentPlacemark) andReturn:mockCLPlacemark];
 
-			[geolocationManager requestLocation:^(CLLocation *_Nullable location) {
+			[geolocationManager requestCurrentPlacemark:^(CLPlacemark *_Nullable placemark) {
 
-				returnLocation = location;
+				returnPlacemark = placemark;
 			}];
 
 			// Delay execution of my block for 1 seconds.
@@ -98,7 +101,7 @@ describe(@"PNGeolocationManagerSpec", ^{
 				[geolocationManager notifyWithResult];
 			});
 
-			[[expectFutureValue(returnLocation) shouldEventuallyBeforeTimingOutAfter(3.0)] beNonNil];
+			[[expectFutureValue(returnPlacemark) shouldEventuallyBeforeTimingOutAfter(3.0)] beNonNil];
 
 		});
 

@@ -9,18 +9,19 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 
-typedef void (^PNGeolocationManagerResult)(CLLocation *_Nullable location);
+typedef void (^PNGeolocationManagerResult)(CLPlacemark *_Nullable placemark);
 
 @interface PNGeolocationManager : NSObject
 
 /**
- * Singleton for the phonebook
+ * Singleton for the PNGeolocationManager
  */
 + (nonnull instancetype)sharedInstance;
 
 /**
  * retrieve the current location
+ * @param resultCallback, the callback block which return geolocation information
  */
-- (void)requestLocation:(nullable PNGeolocationManagerResult)resultCallback;
+- (void)requestCurrentPlacemark:(nullable PNGeolocationManagerResult)resultCallback;
 
 @end

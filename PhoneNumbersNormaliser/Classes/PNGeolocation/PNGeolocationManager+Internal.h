@@ -11,7 +11,10 @@
 @interface PNGeolocationManager () <CLLocationManagerDelegate>
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, strong) CLGeocoder *geocoder;
+
 @property (nonatomic, strong) CLLocation *currentDetectedLocation;
+@property (nonatomic, strong) CLPlacemark *currentPlacemark;
 @property (nonatomic, strong) PNGeolocationManagerResult resultCallback;
 
 - (void)notifyWithResult;

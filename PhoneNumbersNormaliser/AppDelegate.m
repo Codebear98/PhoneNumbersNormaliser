@@ -10,7 +10,6 @@
 
 #import "PNPhoneBookViewController.h"
 #import "PNPhoneBook.h"
-#import "PNGeolocationManager.h"
 
 @interface AppDelegate ()
 
@@ -45,12 +44,6 @@
 
 
 	self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[PNPhoneBookViewController new]];
-
-	[[PNGeolocationManager sharedInstance]requestLocation:^(CLLocation *_Nullable location) {
-		NSLog(@"return %@", location);
-
-	}];
-	// should activate PNGeolocationManager to cache the current location.
 
 	return YES;
 }

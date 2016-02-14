@@ -34,8 +34,10 @@
 		_locationManager = [[CLLocationManager alloc] init];
 		_locationManager.delegate = self;
 		_locationManager.distanceFilter = kCLDistanceFilterNone;
-		_locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+		_locationManager.desiredAccuracy = kCLLocationAccuracyBest;
 
+		_geocoder = [[CLGeocoder alloc]init];
+		
 		if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
 
 			[self.locationManager requestWhenInUseAuthorization];
@@ -51,9 +53,22 @@
 	 didUpdateLocations:(NSArray<CLLocation * > *)locations
 {
 	if (locations.count > 0) {
+
 		self.currentDetectedLocation = [locations lastObject];
-		NSLog(@"DetectedLocation updated: %@", self.currentDetectedLocation);
-		[self notifyWithResult];
+		NSLog(@"Detected location: %@", _currentDetectedLocation);
+
+		[self.geocoder reverseGeocodeLocation:self.currentDetectedLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+			NSLog(@"Finding address");
+			if (error) {
+				NSLog(@"Error %@", error.description);
+			} else {
+
+				self.currentPlacemark = [placemarks lastObject];
+				NSLog(@"Detected placemark: %@", _currentPlacemark);
+			}
+
+			[self notifyWithResult];
+		}];
 	}
 }
 
@@ -65,7 +80,7 @@
 	[self notifyWithResult];
 }
 
-- (void)requestLocation:(nullable PNGeolocationManagerResult)resultCallback
+- (void)requestCurrentPlacemark:(nullable PNGeolocationManagerResult)resultCallback
 {
 
 	self.resultCallback = resultCallback;
@@ -74,8 +89,8 @@
 
 - (void)notifyWithResult
 {
-	if (self.resultCallback) {
-		self.resultCallback(_currentDetectedLocation);
+	 if (self.resultCallback) {
+		self.resultCallback(self.currentPlacemark);
 		self.resultCallback = nil;
 	}
 }

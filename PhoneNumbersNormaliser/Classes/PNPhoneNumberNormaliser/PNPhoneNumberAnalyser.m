@@ -11,7 +11,7 @@
 #import <libPhoneNumber-iOS/NBPhoneNumberDefines.h>
 #import <libPhoneNumber-iOS/NBPhoneNumberUtil.h>
 
-static const NSString * PNRegion_BackFill = @"HK";
+#define kBackFillCountryCode @"HK"
 
 @interface PNPhoneNumberAnalyser()
 
@@ -37,8 +37,20 @@ static const NSString * PNRegion_BackFill = @"HK";
 	NBPhoneNumberUtil *phoneUtil = [NBPhoneNumberUtil sharedInstance];
 	phoneNubmerString = [phoneUtil normalizeDigitsOnly:phoneNubmerString];
 	PNPhoneNumber *pnPhoneNumber = nil;
+	NSString *region = nil;
 
-	NSString *region = (self.defaultRegion) ? self.defaultRegion:PNRegion_BackFill;
+	if (self.defaultRegion.length > 0) {
+
+		region = self.defaultRegion;
+	} else {
+
+		region = [phoneUtil countryCodeByCarrier]; // use carrier region
+	}
+
+	// if still no region
+	if (region.length < 1 || [region isEqualToString:NB_UNKNOWN_REGION]) {
+		region = kBackFillCountryCode;
+	}
 
 	NSError *aError = nil;
 	NBPhoneNumber *nbPhoneNumber = [phoneUtil parse:phoneNubmerString defaultRegion:region error:&aError];
@@ -74,26 +86,6 @@ static const NSString * PNRegion_BackFill = @"HK";
 			pnPhoneNumber.isValid = NO;
 		}
 		
-		NSLog(@"Error : %@", [aError localizedDescription]);
-	}
-
-	return pnPhoneNumber;
-}
-
-- (nonnull PNPhoneNumber *)analyseWithCarrierRegion:(nonnull NSString *)phoneNubmerString
-{
-	PNPhoneNumber *pnPhoneNumber = nil;
-
-	NBPhoneNumberUtil *phoneUtil = [NBPhoneNumberUtil sharedInstance];
-
-	NSError *aError = nil;
-	NBPhoneNumber *nbPhoneNumber = [phoneUtil parseWithPhoneCarrierRegion:phoneNubmerString error:&aError];
-
-	if (!aError) {
-		// Should check error
-		pnPhoneNumber = [self convertToPNPhoneNumber:nbPhoneNumber];
-
-	} else {
 		NSLog(@"Error : %@", [aError localizedDescription]);
 	}
 

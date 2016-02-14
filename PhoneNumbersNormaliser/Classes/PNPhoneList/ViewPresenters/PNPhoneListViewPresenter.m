@@ -8,8 +8,8 @@
 
 #import "PNPhoneListViewPresenter.h"
 #import "PNPhoneBookDataSource.h"
-
 #import "PNPhoneNumberAnalyser.h"
+#import "PNGeolocationManager.h"
 
 // views
 #import "PNPhoneListCell.h"
@@ -71,17 +71,30 @@ typedef NS_ENUM(NSInteger, PNPhoneListViewMode) {
 
 	NSArray *phoneNumberStrings = [self.phoneBookData findAllPhoneRecords];
 
-	PNPhoneNumberAnalyser *phoneNumberAnalyser = [[PNPhoneNumberAnalyser alloc]initWithDefaultRegion:@"HK"];
-	for (NSString *string in phoneNumberStrings) {
+	PNWeakSelf(weakSelf);
 
-		[normalisedPhoneNumbers addObject:[phoneNumberAnalyser analyse:string]];
-	}
+	// request for current geolocation, translate to meaningful address
+	[[PNGeolocationManager sharedInstance]requestCurrentPlacemark:^(CLPlacemark *_Nullable placemark) {
 
-	self.analyzedPhoneNumbers = normalisedPhoneNumbers;
-	self.listViewMode = PNPhoneListViewModeNormalised;
-	self.phoneNumberStrings = phoneNumberStrings;
+		NSString *countryCode = nil; // backfill country code
+		if (placemark.ISOcountryCode.length > 0) {
+			countryCode = placemark.ISOcountryCode;
+			NSLog(@"detected country code: %@", countryCode);
+		}
 
-	[self.phoneListView reloadData];
+		PNPhoneNumberAnalyser *phoneNumberAnalyser = [[PNPhoneNumberAnalyser alloc]initWithDefaultRegion:countryCode];
+		for (NSString *string in phoneNumberStrings) {
+
+			[normalisedPhoneNumbers addObject:[phoneNumberAnalyser analyse:string]];
+		}
+
+		weakSelf.analyzedPhoneNumbers = normalisedPhoneNumbers;
+		weakSelf.listViewMode = PNPhoneListViewModeNormalised;
+		weakSelf.phoneNumberStrings = phoneNumberStrings;
+
+		[weakSelf.phoneListView reloadData];
+
+	}];
 }
 
 #pragma mark - UITableViewDataSource
