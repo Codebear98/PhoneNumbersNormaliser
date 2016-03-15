@@ -13,7 +13,9 @@ open the workspace file and build
 ### Contribution guidelines ###
 
 Please read
+
 QuestionPaper.pdf - for original question of this project to solve.
+
 PhoneNumbersNormaliser.pdf - for details development approach.
 
 ### Who do I talk to? ###
