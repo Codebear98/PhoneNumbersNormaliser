@@ -16,7 +16,7 @@ Please read
 
 QuestionPaper.pdf - the original problem this project was trying to solve.
 
-PhoneNumbersNormaliser.pdf - the details of development approach for this project.
+PhoneNumbersNormaliser.pdf - the details of development approach used on this project.
 
 ### Who do I talk to? ###
 
