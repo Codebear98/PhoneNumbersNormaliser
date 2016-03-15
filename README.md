@@ -14,9 +14,9 @@ open the workspace file and build
 
 Please read
 
-QuestionPaper.pdf - for original question of this project to solve.
+QuestionPaper.pdf - the original problem this project was trying to solve.
 
-PhoneNumbersNormaliser.pdf - for details development approach.
+PhoneNumbersNormaliser.pdf - the details of development approach for this project.
 
 ### Who do I talk to? ###
 
