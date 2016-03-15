@@ -2,7 +2,7 @@
 
 ### What is this repository for? ###
 
-This is an iOS app project that was developing for a job interview. It demonstrate the use of contemporary skills/tools that used for scrum/agile development.
+This is an iOS app project that was developing for a job interview. It demonstrates the use of contemporary skills/tools that used for scrum/agile development.
 
 Skills/tools including BDD, MVP, Code style enforcement etc.
 
