@@ -8,7 +8,12 @@ functionals
 - anayse and normalize the phone numbers with detected country code
 - display final result
 
-This project demonstrates the use of MVP, BDD, application of Blocks programming, Code style enforcement etc. 
+This project demonstrates the use of 
+- usage of PNPhoneNumberAnalyser
+- Model-View-Presenter architecture
+- Behaviour driven development with kiwi-BDD testing framework
+- autolayout (pure code approach) 
+- Code style enforcement etc. 
 
 ### How do I get set up? ###
 
