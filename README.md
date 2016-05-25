@@ -1,10 +1,8 @@
 # README #
 
-### What is this repository for? ###
+A demo app that used to normalise pre-set phone numbers, detect if the number is a mobile number, fixed line and whether it's a valid number for the country where the mobile device located. 
 
-This is an iOS app project that was developing for a job interview. It demonstrates the use of contemporary skills/tools or even mindset that should/ could be using for scrum/agile development.
-
-Skills/tools including BDD, MVP, Code style enforcement etc.
+It demonstrates the use of BDD, MVP, Code style enforcement etc.
 
 ### How do I get set up? ###
 
@@ -13,8 +11,6 @@ open the workspace file and build
 ### Contribution guidelines ###
 
 Please read
-
-QuestionPaper.pdf - the original problem this project was trying to solve.
 
 PhoneNumbersNormaliser.pdf - the details of development approach used on this project.
 
